@@ -863,6 +863,7 @@ final class SyncEngine
 		assert(item.type == ItemType.file);
 		if (exists(path)) {
 			if (isFile(path)) {
+				log.vlog("Checking file before upload: ", path);
 				SysTime localModifiedTime = timeLastModified(path).toUTC();
 				// HACK: reduce time resolution to seconds before comparing
 				item.mtime.fracSecs = Duration.zero;
