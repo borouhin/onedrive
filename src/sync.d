@@ -769,7 +769,7 @@ final class SyncEngine
 
 	private void uploadDifferences(Item item)
 	{
-		log.vlog("Processing ", item.name);
+		//log.vlog("Processing ", item.name);
 
 		string path;
 		bool unwanted = selectiveSync.isNameExcluded(item.name);
@@ -818,7 +818,7 @@ final class SyncEngine
 				uploadDeleteItem(item, path);
 				uploadNewFile(path);
 			} else {
-				log.vlog("The directory has not changed");
+				//log.vlog("The directory has not changed");
 				// loop trough the children
 				foreach (Item child; itemdb.selectChildren(item.driveId, item.id)) {
 					uploadDifferences(child);
