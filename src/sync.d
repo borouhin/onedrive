@@ -110,7 +110,7 @@ private Item makeItem(const ref JSONValue driveItem)
 
 private bool testFileHash(string path, const ref Item item)
 {
-	log.vlog("Testing hash of ", path)
+	log.vlog("Testing hash of ", path);
 	if (item.crc32Hash) {
 		if (item.crc32Hash == computeCrc32(path)) return true;
 	} else if (item.sha1Hash) {
